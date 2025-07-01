@@ -108,6 +108,44 @@ const Dashboard = () => {
             <QuickActions />
           </div>
         </div>
+
+        {/* Content Types Overview */}
+        {state.analytics.totalContent > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="bg-white rounded-xl p-6 border border-gray-200"
+          >
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Content Distribution</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-600">
+                  {state.analytics.contentTypes.blog_post || 0}
+                </div>
+                <div className="text-sm text-gray-600">Blog Posts</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-green-600">
+                  {state.analytics.contentTypes.social_post || 0}
+                </div>
+                <div className="text-sm text-gray-600">Social Posts</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-purple-600">
+                  {state.analytics.contentTypes.book_chapter || 0}
+                </div>
+                <div className="text-sm text-gray-600">Book Chapters</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-orange-600">
+                  {state.analytics.totalContent}
+                </div>
+                <div className="text-sm text-gray-600">Total Content</div>
+              </div>
+            </div>
+          </motion.div>
+        )}
       </motion.div>
     </div>
   );
