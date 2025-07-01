@@ -32,3 +32,21 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Custom styles for feedback button positioning */
+@media (max-width: 768px) {
+  .feedback-button-mobile {
+    right: -8px;
+    padding: 12px 8px;
+  }
+}
+
+/* Ensure feedback modal is above all other content */
+.feedback-modal-overlay {
+  z-index: 9999;
+}
+
+/* Smooth transitions for feedback interactions */
+.feedback-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
